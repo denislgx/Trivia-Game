@@ -1,8 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../styles/Main.scss";
+// import { getRandomTrivia } from "../redux/actions/trivia"
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import store from "../redux/store"
 
 const Main = () => {
     const [start, setStart] = useState(false);
+    const dispatch = useDispatch();
+
+
+    const getRandomTrivia = () => {
+        axios.get("https://opentdb.com/api.php?amount=10")
+            .then(res => {
+                console.log(res);
+                dispatch({ type: "GET_RANDOM_TRIVIA", payload: res.data.results });
+            })
+            .then(() => console.log("el store", store.getState(), typeof store.getState()));
+    };
+
+    useEffect(() => {
+        getRandomTrivia()
+    }, [start]);
+
     return (
         <div className="main_wrapper">
             {!start && (
@@ -16,7 +36,7 @@ const Main = () => {
                                 Enjoy!
                             </div>
                         </header>
-                        <img src="qa.svg" className="question_img" />
+                        <img src="qa.svg" className="question_img" alt="qa" />
                     </div>
                     <div className="start_btn_wrapper">
                         <div onClick={() => setStart(true)} className="start_btn">START</div>
@@ -24,7 +44,11 @@ const Main = () => {
                 </>
             )
             }
-
+            {start && (
+                <div>
+                    hola
+                </div>
+            )}
         </div>
     );
 };
