@@ -2,7 +2,7 @@ const initialState = [];
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case "GET_RANDOM_TRIVIA":
+        case "GET_ANSWERS":
             return [...action.payload];
         default:
             return state;

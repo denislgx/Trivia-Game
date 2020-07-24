@@ -5,6 +5,7 @@
     top: 50px;
     display: flex;
     flex-direction: column;
+    // border: 15px solid goldenrod;
 }
 
 .header_wrapper {
@@ -75,6 +76,7 @@
     }
     .question_img {
         order: 1;
+        margin: 0;
     }
     .header {
         order: 2;
@@ -84,5 +86,7 @@
         order: 3;
         margin-top: 20px;
         margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
