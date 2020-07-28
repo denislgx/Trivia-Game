@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+import Trivia from "./components/Trivia";
 
 function App() {
 
@@ -20,7 +22,10 @@ function App() {
     return (
         <div className="app_wrapper">
             <Navbar />
-            <Main />
+            <Switch>
+                <Route path="/trivia" component={Trivia} />
+                <Route path="/" component={Main} />
+            </Switch>
             <Footer />
         </div>
     );

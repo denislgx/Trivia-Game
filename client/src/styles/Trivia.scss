@@ -30,7 +30,6 @@
     padding: 10px;
     background: linear-gradient(90deg, rgba(58,127,180,1) 0%, rgba(135,150,198,1) 0%);
     height: 70%;
-
     box-shadow: 5px 5px 50px 10px goldenrod;
     border-radius: 20px;
     justify-content: center;
@@ -44,6 +43,7 @@
 
 
 .answer {
+    // border: 2px solid goldenrod;
     display: flex;
     width: 100%;
     justify-content: space-around;;
@@ -59,8 +59,25 @@
     text-align: center;
     line-height: 50px;
     font-weight: bolder;;
-    font-size: 25px;
     box-shadow: 5px 5px 50px 10px goldenrod;
+}
+
+.option_ans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-wrap: wrap;
+    padding: 5px;
+    border: 5px double rgb(128, 115, 0);
+    width: 200px;
+    height: 70px;
+    background: linear-gradient(90deg, rgba(58,127,180,1) 0%, rgba(135,150,198,1) 0%);
+    align-self: center;
+    text-align: center;
+    // line-height: 70px;
+    font-weight: bolder;;
+    box-shadow: 5px 5px 50px 10px goldenrod;
+    cursor: pointer;
 }
 
 .tools_wrapper {

@@ -14,6 +14,7 @@ const Trivia = () => {
 
 
 
+    // Fisher-Yates shuffle algorithm
 
     const shuffleArray = (array) => {
         for (var i = array.length - 1; i > 0; i--) {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import "../styles/Main.scss";
 import Trivia from "./Trivia";
 
@@ -22,15 +23,19 @@ const Main = () => {
                         <img src="qa.svg" className="question_img" alt="qa" />
                     </div>
                     <div className="start_btn_wrapper">
-                        <div onClick={() => setStart(true)} className="start_btn">START</div>
+                        <Link to="/trivia" style={{ textDecoration: "none" }}>
+                            <div onClick={() => setStart(true)} className="start_btn">START</div>
+                        </Link>
                     </div>
 
                 </div>
             )
             }
-            {start && (
-                <Trivia />
-            )}
+            {
+                start && (
+                    <Trivia />
+                )
+            }
         </>
     );
 };

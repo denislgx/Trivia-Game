@@ -45,9 +45,11 @@
     height: calc(100vh - 100px);
     justify-content: center;
     align-items: center;
+    // border: blue 2px solid;
 }
 
 .start_btn {
+    color: black;
     font-family: Candara;
     font-weight: bolder;
     font-size: large;
@@ -59,11 +61,17 @@
     line-height: 150px;
     border-radius: 100px;
     box-shadow: 5px 5px 40px 10px black;
-    cursor: pointer;
-    position: absolute;
+    position: relative;
     bottom: 20%;
+    // text-decoration: none !important;
+    // border-bottom-style: none;
+    cursor: pointer;
     &:active{
         bottom: 22%;
+        color: black;
+    }
+    &:visited {
+        color: black;
     }
 }
 

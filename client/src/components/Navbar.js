@@ -1,11 +1,14 @@
-import React from 'react';
-import '../styles/Navbar.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/Navbar.scss";
 
 const Navbar = () => {
     return (
         <div className='wrapper'>
             <div className="logo_wrapper">
-                <div onClick={() => window.location.reload()} className="logo">TRIVIA-GAME</div>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <div className="logo">TRIVIA-GAME</div>
+                </Link>
             </div>
             <div className="registration_wrapper">
                 <div className="sign_up">SIGN-UP</div>
