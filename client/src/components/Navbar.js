@@ -7,7 +7,7 @@ const Navbar = () => {
         <div className='wrapper'>
             <div className="logo_wrapper">
                 <Link to="/" style={{ textDecoration: "none" }}>
-                    <div className="logo">TRIVIA-GAME</div>
+                    <div onClick={() => localStorage.clear()} className="logo">TRIVIA-GAME</div>
                 </Link>
             </div>
             <div className="registration_wrapper">

@@ -4,6 +4,7 @@ import axios from "axios";
 import he from "he";
 import store from "../redux/store";
 import "../styles/Trivia.scss";
+import { loadState } from "../localStorage";
 
 
 const Trivia = () => {
@@ -34,20 +35,23 @@ const Trivia = () => {
                 let correct = he.decode(res.data.results[0]["correct_answer"]);
                 let incorrect = res.data.results[0].incorrect_answers.map(each => he.decode(each));
                 incorrect.push(correct);
-                // console.log('incorrect', incorrect)
-                // console.log('shuffled', shuffleArray(incorrect))
-                let x = shuffleArray(incorrect);
-                dispatch({ type: "GET_ANSWERS", payload: x })
+                let allAnswersShuffled = shuffleArray(incorrect);
+                dispatch({ type: "GET_ANSWERS", payload: allAnswersShuffled })
             })
             .then(() => console.log("el store", store.getState()))
             .catch(err => console.log(err));
     };
 
     useEffect(() => {
-        getRandomTrivia()
+        if (localStorage.getItem("trivia")) {
+            return
+        } else {
+
+            getRandomTrivia()
+        }
     }, []);
 
-    // console.log("trivia", trivia)
+    console.log("trivia", localStorage)
 
     return (
         <div className="trivia_wrapper">
